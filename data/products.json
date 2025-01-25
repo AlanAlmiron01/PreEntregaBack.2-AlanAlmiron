@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Bicicleta Trek Marlin 7",
+    "price": 1200,
+    "stock": 5,
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"]
+  },
+  {
+    "id": 2,
+    "title": "Bicicleta Trek Procaliber",
+    "price": 2300,
+    "stock": 3,
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"]
+  },
+  {
+    "id": 3,
+    "title": "Bicicleta Trek Madone",
+    "price": 5000,
+    "stock": 2,
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"]
+  }
+]

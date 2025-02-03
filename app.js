@@ -1,24 +1,25 @@
-const express = require('express');
-const productsRouter = require('./routes/products.routes');
-const pathHandler = require('./middlewares/pathHandler');
-const errorHandler = require('./middlewares/errorHandler');
+import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+import productsRoutes from './routes/products.routes.js';
+import cartsRoutes from './routes/carts.routes.js';
+import usersRoutes from './routes/users.routes.js';
+import pathHandler from './middlewares/pathHandler.js';
+import errorHandler from './middlewares/errorHandler.js';
 
 const app = express();
 
-// Middleware para parsear JSON
+app.use(cors());
+app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Servir archivos estáticos desde "public"
 app.use(express.static('public'));
 
-// Rutas de la API
-app.use('/api/products', productsRouter);
+app.use('/api/products', productsRoutes);
+app.use('/api/carts', cartsRoutes);
+app.use('/api/users', usersRoutes);
 
-// Middleware para rutas no encontradas
 app.use(pathHandler);
-
-// Middleware para manejo de errores
 app.use(errorHandler);
 
-module.exports = app;
+export default app;

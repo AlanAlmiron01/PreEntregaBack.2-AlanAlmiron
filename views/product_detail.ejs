@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= product.title %> - Detail</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1><%= product.title %></h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/products/real">Products</a>
+      <a href="/cart">Cart</a>
+    </nav>
+  </header>
+  <main>
+    <div class="product-detail">
+      <img src="<%= product.thumbnails[0] %>" alt="<%= product.title %>">
+      <p>Category: <%= product.category %></p>
+      <p>Price: $<%= product.price %></p>
+      <p>Stock: <%= product.stock %></p>
+      <p>Description: <%= product.description %></p>
+      <form id="addToCartForm">
+        <input type="number" name="quantity" value="1" min="1" max="<%= product.stock %>">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </div>
+  </main>
+  <script>
+    document.getElementById('addToCartForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const quantity = parseInt(e.target.quantity.value);
+      let cartId = localStorage.getItem('cartId');
+      if (!cartId) {
+        const res = await fetch('/api/carts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ products: [], user_id: 'guest' })
+        });
+        const data = await res.json();
+        cartId = data.response._id || data.response;
+        localStorage.setItem('cartId', cartId);
+      }
+      const res = await fetch(`/api/carts/${cartId}/product/<%= product._id %>`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quantity })
+      });
+      if (res.ok) {
+        alert('Product added to cart');
+      } else {
+        const errorData = await res.json();
+        alert('Error: ' + errorData.error);
+      }
+    });
+  </script>
+</body>
+</html>

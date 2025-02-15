@@ -5,7 +5,8 @@
     "category": "Mountain",
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1000,
-    "stock": 10
+    "stock": 5,
+    "description": "A high-performance mountain bike perfect for rugged terrain."
   },
   {
     "_id": "2",
@@ -13,7 +14,8 @@
     "category": "Road",
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1200,
-    "stock": 15
+    "stock": 6,
+    "description": "A sleek road bike designed for speed and efficiency on paved roads."
   },
   {
     "_id": "3",
@@ -21,7 +23,340 @@
     "category": "Hybrid",
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 900,
-    "stock": 8
+    "stock": 7,
+    "description": "A versatile hybrid bike suitable for both urban commuting and light off-road adventures."
+  },
+  {
+    "_id": "4",
+    "title": "Trek Bike 4",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1050,
+    "stock": 8,
+    "description": "A robust mountain bike with improved suspension and durability."
+  },
+  {
+    "_id": "5",
+    "title": "Trek Bike 5",
+    "category": "Road",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
+    "price": 1250,
+    "stock": 10,
+    "description": "A lightweight road bike ideal for long-distance riding."
+  },
+  {
+    "_id": "6",
+    "title": "Trek Bike 6",
+    "category": "Hybrid",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
+    "price": 950,
+    "stock": 9,
+    "description": "A comfortable hybrid bike with smooth handling for mixed terrain."
+  },
+  {
+    "_id": "7",
+    "title": "Trek Bike 7",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1100,
+    "stock": 12,
+    "description": "An advanced mountain bike with cutting-edge features for off-road enthusiasts."
+  },
+  {
+    "_id": "8",
+    "title": "Trek Bike 8",
+    "category": "Road",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
+    "price": 1300,
+    "stock": 7,
+    "description": "A performance road bike engineered for racing and speed."
+  },
+  {
+    "_id": "9",
+    "title": "Trek Bike 9",
+    "category": "Hybrid",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
+    "price": 980,
+    "stock": 11,
+    "description": "A versatile hybrid bike combining the best of both worlds for city and trail riding."
+  },
+  {
+    "_id": "10",
+    "title": "Trek Bike 10",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1150,
+    "stock": 10,
+    "description": "A durable mountain bike with excellent traction on rough paths."
+  },
+  {
+    "_id": "11",
+    "title": "Trek Bike 11",
+    "category": "Road",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
+    "price": 1350,
+    "stock": 8,
+    "description": "A state-of-the-art road bike designed for high-speed performance."
+  },
+  {
+    "_id": "12",
+    "title": "Trek Bike 12",
+    "category": "Hybrid",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
+    "price": 1020,
+    "stock": 9,
+    "description": "A balanced hybrid bike perfect for daily commutes and weekend adventures."
+  },
+  {
+    "_id": "13",
+    "title": "Trek Bike 13",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1080,
+    "stock": 6,
+    "description": "A rugged mountain bike built for challenging trails."
+  },
+  {
+    "_id": "14",
+    "title": "Trek Bike 14",
+    "category": "Road",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
+    "price": 1400,
+    "stock": 10,
+    "description": "A cutting-edge road bike that offers a smooth ride on asphalt."
+  },
+  {
+    "_id": "15",
+    "title": "Trek Bike 15",
+    "category": "Hybrid",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
+    "price": 970,
+    "stock": 7,
+    "description": "A hybrid bike that excels in versatility for urban and light off-road use."
+  },
+  {
+    "_id": "16",
+    "title": "Trek Bike 16",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1120,
+    "stock": 9,
+    "description": "A high-performance mountain bike with robust features for rough terrains."
+  },
+  {
+    "_id": "17",
+    "title": "Trek Bike 17",
+    "category": "Road",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
+    "price": 1380,
+    "stock": 11,
+    "description": "A lightweight and agile road bike designed for speed and endurance."
+  },
+  {
+    "_id": "18",
+    "title": "Trek Bike 18",
+    "category": "Hybrid",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
+    "price": 990,
+    "stock": 8,
+    "description": "A comfortable hybrid bike ideal for both commuting and weekend leisure rides."
+  },
+  {
+    "_id": "19",
+    "title": "Trek Bike 19",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1170,
+    "stock": 10,
+    "description": "A rugged mountain bike with advanced suspension and braking systems."
+  },
+  {
+    "_id": "20",
+    "title": "Trek Bike 20",
+    "category": "Road",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
+    "price": 1450,
+    "stock": 7,
+    "description": "A professional road bike crafted for competitive racing."
+  },
+  {
+    "_id": "21",
+    "title": "Trek Bike 21",
+    "category": "Hybrid",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
+    "price": 1010,
+    "stock": 9,
+    "description": "A versatile hybrid bike that combines efficiency with comfort."
+  },
+  {
+    "_id": "22",
+    "title": "Trek Bike 22",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1130,
+    "stock": 12,
+    "description": "A mountain bike engineered for durability and performance on rugged trails."
+  },
+  {
+    "_id": "23",
+    "title": "Trek Bike 23",
+    "category": "Road",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
+    "price": 1420,
+    "stock": 8,
+    "description": "A sleek road bike with aerodynamic design for fast rides."
+  },
+  {
+    "_id": "24",
+    "title": "Trek Bike 24",
+    "category": "Hybrid",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
+    "price": 980,
+    "stock": 10,
+    "description": "A balanced hybrid bike perfect for both urban commuting and casual rides."
+  },
+  {
+    "_id": "25",
+    "title": "Trek Bike 25",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1160,
+    "stock": 9,
+    "description": "A rugged mountain bike built for challenging off-road trails."
+  },
+  {
+    "_id": "26",
+    "title": "Trek Bike 26",
+    "category": "Road",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
+    "price": 1390,
+    "stock": 7,
+    "description": "A high-performance road bike for competitive racing."
+  },
+  {
+    "_id": "27",
+    "title": "Trek Bike 27",
+    "category": "Hybrid",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
+    "price": 995,
+    "stock": 11,
+    "description": "A versatile hybrid bike with a perfect blend of speed and comfort."
+  },
+  {
+    "_id": "28",
+    "title": "Trek Bike 28",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1180,
+    "stock": 8,
+    "description": "A sturdy mountain bike designed to handle tough terrains."
+  },
+  {
+    "_id": "29",
+    "title": "Trek Bike 29",
+    "category": "Road",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
+    "price": 1440,
+    "stock": 9,
+    "description": "A state-of-the-art road bike built for speed and agility."
+  },
+  {
+    "_id": "30",
+    "title": "Trek Bike 30",
+    "category": "Hybrid",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
+    "price": 1020,
+    "stock": 10,
+    "description": "A reliable hybrid bike ideal for daily commuting and weekend rides."
+  },
+  {
+    "_id": "31",
+    "title": "Trek Bike 31",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1190,
+    "stock": 7,
+    "description": "A powerful mountain bike with advanced features for extreme trails."
+  },
+  {
+    "_id": "32",
+    "title": "Trek Bike 32",
+    "category": "Road",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
+    "price": 1460,
+    "stock": 8,
+    "description": "An innovative road bike with cutting-edge technology for top performance."
+  },
+  {
+    "_id": "33",
+    "title": "Trek Bike 33",
+    "category": "Hybrid",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
+    "price": 1030,
+    "stock": 9,
+    "description": "A versatile hybrid bike combining durability with efficiency."
+  },
+  {
+    "_id": "34",
+    "title": "Trek Bike 34",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1200,
+    "stock": 10,
+    "description": "A top-of-the-line mountain bike designed for challenging off-road adventures."
+  },
+  {
+    "_id": "35",
+    "title": "Trek Bike 35",
+    "category": "Road",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
+    "price": 1480,
+    "stock": 6,
+    "description": "A high-end road bike built for speed and performance on the track."
+  },
+  {
+    "_id": "36",
+    "title": "Trek Bike 36",
+    "category": "Hybrid",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
+    "price": 1040,
+    "stock": 11,
+    "description": "A practical hybrid bike that excels in both urban and light off-road conditions."
+  },
+  {
+    "_id": "37",
+    "title": "Trek Bike 37",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1210,
+    "stock": 9,
+    "description": "A robust mountain bike with enhanced suspension for rough terrain."
+  },
+  {
+    "_id": "38",
+    "title": "Trek Bike 38",
+    "category": "Road",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
+    "price": 1500,
+    "stock": 8,
+    "description": "A sleek and modern road bike designed for long-distance riding."
+  },
+  {
+    "_id": "39",
+    "title": "Trek Bike 39",
+    "category": "Hybrid",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
+    "price": 1050,
+    "stock": 10,
+    "description": "A versatile hybrid bike with a focus on comfort and performance."
+  },
+  {
+    "_id": "40",
+    "title": "Trek Bike 40",
+    "category": "Mountain",
+    "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
+    "price": 1220,
+    "stock": 7,
+    "description": "A high-quality mountain bike built for endurance and stability."
   }
-  
 ]

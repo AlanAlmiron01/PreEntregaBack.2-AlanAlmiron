@@ -29,7 +29,7 @@ class CartManager {
     };
     carts.push(newCart);
     await this.write(carts);
-    return newCart._id;
+    return newCart;
   }
 
   async readOne(id) {
@@ -45,22 +45,19 @@ class CartManager {
     return id;
   }
 
-  // Agrega un producto al carrito, o aumenta la cantidad si ya existe.
   async addProductToCart(cartId, productId, quantity) {
     const carts = await this.read();
     const cartIndex = carts.findIndex(c => c._id === cartId);
     if (cartIndex === -1) throw new Error('Cart not found');
-    
-    // Verificar stock usando ProductManager
+
     const productManager = new ProductManager();
     const product = await productManager.readOne(productId);
     if (!product) throw new Error('Product not found');
-    
+
     const cart = carts[cartIndex];
     const existingProduct = cart.products.find(p => p.productId === productId);
-    let newQuantity = quantity;
     if (existingProduct) {
-      newQuantity = existingProduct.quantity + quantity;
+      const newQuantity = existingProduct.quantity + quantity;
       if (newQuantity > product.stock) throw new Error('Quantity exceeds available stock');
       existingProduct.quantity = newQuantity;
     } else {
@@ -71,23 +68,21 @@ class CartManager {
     return cart;
   }
 
-  // Actualiza la cantidad de un producto específico en el carrito.
   async updateProductQuantity(cartId, productId, quantity) {
     const carts = await this.read();
     const cartIndex = carts.findIndex(c => c._id === cartId);
     if (cartIndex === -1) throw new Error('Cart not found');
-    
+
     const productManager = new ProductManager();
     const product = await productManager.readOne(productId);
     if (!product) throw new Error('Product not found');
-    
+
     const cart = carts[cartIndex];
     const prodIndex = cart.products.findIndex(p => p.productId === productId);
     if (prodIndex === -1) throw new Error('Product not found in cart');
-    
+
     if (quantity > product.stock) throw new Error('Quantity exceeds available stock');
-    if (quantity <= 0) { 
-      // Si la cantidad es cero o menor, eliminar el producto del carrito.
+    if (quantity <= 0) {
       cart.products.splice(prodIndex, 1);
     } else {
       cart.products[prodIndex].quantity = quantity;
@@ -96,12 +91,11 @@ class CartManager {
     return cart;
   }
 
-  // Elimina un producto del carrito.
   async removeProductFromCart(cartId, productId) {
     const carts = await this.read();
     const cartIndex = carts.findIndex(c => c._id === cartId);
     if (cartIndex === -1) throw new Error('Cart not found');
-    
+
     const cart = carts[cartIndex];
     const newProducts = cart.products.filter(p => p.productId !== productId);
     if (newProducts.length === cart.products.length) throw new Error('Product not found in cart');

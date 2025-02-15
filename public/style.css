@@ -13,17 +13,18 @@ header {
   text-align: center;
 }
 
-nav button {
-  background-color: #fff;
-  color: #0073e6;
-  border: none;
-  padding: 0.5rem 1rem;
+nav a, nav button {
   margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  color: #0073e6;
+  text-decoration: none;
+  background-color: #fff;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-nav button:hover {
+nav a:hover, nav button:hover {
   background-color: #005bb5;
   color: #fff;
 }
@@ -32,14 +33,14 @@ main {
   padding: 1rem;
 }
 
-#productList {
+#products, #productsList {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
 }
 
-.product {
+.product-card, .product-detail {
   background-color: #fff;
   border: 1px solid #ddd;
   padding: 1rem;
@@ -47,7 +48,7 @@ main {
   text-align: center;
 }
 
-.product img {
+.product-card img, .product-detail img {
   max-width: 100%;
   height: auto;
 }

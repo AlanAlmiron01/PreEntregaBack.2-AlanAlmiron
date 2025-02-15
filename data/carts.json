@@ -11,16 +11,7 @@
   },
   {
     "_id": "e7dc7d3e-e121-45a7-a3ac-d2f8dd5589f5",
-    "products": [
-      {
-        "productId": "3",
-        "quantity": 1
-      },
-      {
-        "productId": "2",
-        "quantity": 1
-      }
-    ],
+    "products": [],
     "user_id": "guest"
   }
 ]

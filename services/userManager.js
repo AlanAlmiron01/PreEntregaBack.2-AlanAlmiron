@@ -28,7 +28,7 @@ class UserManager {
     };
     users.push(newUser);
     await this.write(users);
-    return newUser._id;
+    return newUser;
   }
 
   async readOne(id) {

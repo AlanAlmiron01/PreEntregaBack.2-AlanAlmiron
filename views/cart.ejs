@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Your Cart</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/products/real">Products</a>
+    </nav>
+  </header>
+  <main>
+    <div id="cartItems">
+      <!-- Los elementos del carrito se cargarán aquí -->
+    </div>
+  </main>
+  <script>
+    async function loadCart() {
+      const cartId = localStorage.getItem('cartId');
+      const cartItemsDiv = document.getElementById('cartItems');
+      if (!cartId) {
+        cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+        return;
+      }
+      const res = await fetch(`/api/carts/${cartId}`);
+      const data = await res.json();
+      if (data.response && data.response.products.length > 0) {
+        cartItemsDiv.innerHTML = data.response.products.map(item => `
+          <div class="product-card">
+            <p>Product ID: ${item.productId}</p>
+            <p>Quantity: ${item.quantity}</p>
+            <button onclick="updateQuantity('${cartId}', '${item.productId}', ${item.quantity + 1})">+</button>
+            <button onclick="updateQuantity('${cartId}', '${item.productId}', ${item.quantity - 1})">-</button>
+            <button onclick="removeProduct('${cartId}', '${item.productId}')">Remove</button>
+          </div>
+        `).join('');
+      } else {
+        cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+      }
+    }
+    
+    async function updateQuantity(cartId, productId, quantity) {
+      const res = await fetch(`/api/carts/${cartId}/product/${productId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ quantity })
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        alert('Error: ' + err.error);
+      }
+      loadCart();
+    }
+    
+    async function removeProduct(cartId, productId) {
+      const res = await fetch(`/api/carts/${cartId}/product/${productId}`, {
+        method: 'DELETE'
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        alert('Error: ' + err.error);
+      }
+      loadCart();
+    }
+    
+    loadCart();
+  </script>
+</body>
+</html>

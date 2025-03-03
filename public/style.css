@@ -1,3 +1,4 @@
+/* public/style.css */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -33,19 +34,13 @@ main {
   padding: 1rem;
 }
 
-#products, #productsList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
 .product-card, .product-detail {
   background-color: #fff;
   border: 1px solid #ddd;
   padding: 1rem;
   width: 300px;
   text-align: center;
+  margin: 1rem;
 }
 
 .product-card img, .product-detail img {

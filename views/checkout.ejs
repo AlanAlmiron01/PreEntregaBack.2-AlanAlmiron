@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Checkout</h1>
+    <nav>
+      <a href="/products">Products</a>
+      <a href="/cart">Cart</a>
+    </nav>
+  </header>
+  <main>
+    <form id="checkoutForm">
+      <h2>Shipping Information</h2>
+      <label for="address">Address:</label>
+      <input type="text" name="address" id="address" required>
+      
+      <label for="phone">Phone:</label>
+      <input type="text" name="phone" id="phone" required>
+      
+      <button type="submit">Submit Order</button>
+    </form>
+  </main>
+  <script>
+    document.getElementById('checkoutForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const address = document.getElementById('address').value.trim();
+      const phone   = document.getElementById('phone').value.trim();
+      if (!address || !phone) {
+        return alert('Please fill in both address and phone.');
+      }
+      try {
+        const resOrder = await fetch('/api/orders', {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ shippingInfo: { address, phone } })
+        });
+        if (resOrder.ok) {
+          alert('Order placed successfully!');
+          window.location.href = '/';
+        } else {
+          const err = await resOrder.json();
+          alert('Error: ' + (err.message || err.error));
+        }
+      } catch (err) {
+        console.error('Checkout error:', err);
+        alert('Error submitting order.');
+      }
+    });
+  </script>
+</body>
+</html>

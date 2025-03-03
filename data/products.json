@@ -6,7 +6,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1000,
     "stock": 5,
-    "description": "A high-performance mountain bike perfect for rugged terrain."
+    "description": "High-performance mountain bike for rugged terrain."
   },
   {
     "_id": "2",
@@ -15,7 +15,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1200,
     "stock": 6,
-    "description": "A sleek road bike designed for speed and efficiency on paved roads."
+    "description": "Sleek road bike designed for speed."
   },
   {
     "_id": "3",
@@ -24,7 +24,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 900,
     "stock": 7,
-    "description": "A versatile hybrid bike suitable for both urban commuting and light off-road adventures."
+    "description": "Versatile hybrid bike for urban and light off-road use."
   },
   {
     "_id": "4",
@@ -33,7 +33,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1050,
     "stock": 8,
-    "description": "A robust mountain bike with improved suspension and durability."
+    "description": "Robust mountain bike with improved suspension."
   },
   {
     "_id": "5",
@@ -42,7 +42,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1250,
     "stock": 10,
-    "description": "A lightweight road bike ideal for long-distance riding."
+    "description": "Lightweight road bike ideal for long-distance rides."
   },
   {
     "_id": "6",
@@ -51,7 +51,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 950,
     "stock": 9,
-    "description": "A comfortable hybrid bike with smooth handling for mixed terrain."
+    "description": "Comfortable hybrid bike with smooth handling."
   },
   {
     "_id": "7",
@@ -60,7 +60,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1100,
     "stock": 12,
-    "description": "An advanced mountain bike with cutting-edge features for off-road enthusiasts."
+    "description": "Advanced mountain bike for off-road enthusiasts."
   },
   {
     "_id": "8",
@@ -69,7 +69,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1300,
     "stock": 7,
-    "description": "A performance road bike engineered for racing and speed."
+    "description": "Performance road bike engineered for racing."
   },
   {
     "_id": "9",
@@ -78,7 +78,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 980,
     "stock": 11,
-    "description": "A versatile hybrid bike combining the best of both worlds for city and trail riding."
+    "description": "Versatile hybrid bike perfect for city and trail riding."
   },
   {
     "_id": "10",
@@ -87,7 +87,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1150,
     "stock": 10,
-    "description": "A durable mountain bike with excellent traction on rough paths."
+    "description": "Durable mountain bike with excellent traction."
   },
   {
     "_id": "11",
@@ -96,7 +96,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1350,
     "stock": 8,
-    "description": "A state-of-the-art road bike designed for high-speed performance."
+    "description": "State-of-the-art road bike for high-speed performance."
   },
   {
     "_id": "12",
@@ -105,7 +105,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 1020,
     "stock": 9,
-    "description": "A balanced hybrid bike perfect for daily commutes and weekend adventures."
+    "description": "Balanced hybrid bike for daily commutes and weekend adventures."
   },
   {
     "_id": "13",
@@ -114,7 +114,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1080,
     "stock": 6,
-    "description": "A rugged mountain bike built for challenging trails."
+    "description": "Rugged mountain bike built for challenging trails."
   },
   {
     "_id": "14",
@@ -123,7 +123,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1400,
     "stock": 10,
-    "description": "A cutting-edge road bike that offers a smooth ride on asphalt."
+    "description": "Cutting-edge road bike offering a smooth ride on asphalt."
   },
   {
     "_id": "15",
@@ -132,7 +132,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 970,
     "stock": 7,
-    "description": "A hybrid bike that excels in versatility for urban and light off-road use."
+    "description": "Hybrid bike that excels in versatility for urban use."
   },
   {
     "_id": "16",
@@ -141,7 +141,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1120,
     "stock": 9,
-    "description": "A high-performance mountain bike with robust features for rough terrains."
+    "description": "High-performance mountain bike with robust features."
   },
   {
     "_id": "17",
@@ -150,7 +150,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1380,
     "stock": 11,
-    "description": "A lightweight and agile road bike designed for speed and endurance."
+    "description": "Lightweight and agile road bike designed for speed."
   },
   {
     "_id": "18",
@@ -159,7 +159,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 990,
     "stock": 8,
-    "description": "A comfortable hybrid bike ideal for both commuting and weekend leisure rides."
+    "description": "Comfortable hybrid bike ideal for commuting."
   },
   {
     "_id": "19",
@@ -168,7 +168,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1170,
     "stock": 10,
-    "description": "A rugged mountain bike with advanced suspension and braking systems."
+    "description": "Rugged mountain bike with advanced suspension."
   },
   {
     "_id": "20",
@@ -177,7 +177,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1450,
     "stock": 7,
-    "description": "A professional road bike crafted for competitive racing."
+    "description": "Professional road bike crafted for competitive racing."
   },
   {
     "_id": "21",
@@ -186,7 +186,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 1010,
     "stock": 9,
-    "description": "A versatile hybrid bike that combines efficiency with comfort."
+    "description": "Versatile hybrid bike that combines efficiency with comfort."
   },
   {
     "_id": "22",
@@ -195,7 +195,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1130,
     "stock": 12,
-    "description": "A mountain bike engineered for durability and performance on rugged trails."
+    "description": "Mountain bike engineered for durability on rugged trails."
   },
   {
     "_id": "23",
@@ -204,7 +204,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1420,
     "stock": 8,
-    "description": "A sleek road bike with aerodynamic design for fast rides."
+    "description": "Sleek road bike with aerodynamic design."
   },
   {
     "_id": "24",
@@ -213,7 +213,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 980,
     "stock": 10,
-    "description": "A balanced hybrid bike perfect for both urban commuting and casual rides."
+    "description": "Balanced hybrid bike for urban commuting."
   },
   {
     "_id": "25",
@@ -222,7 +222,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1160,
     "stock": 9,
-    "description": "A rugged mountain bike built for challenging off-road trails."
+    "description": "Rugged mountain bike built for challenging trails."
   },
   {
     "_id": "26",
@@ -231,7 +231,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1390,
     "stock": 7,
-    "description": "A high-performance road bike for competitive racing."
+    "description": "High-performance road bike for competitive racing."
   },
   {
     "_id": "27",
@@ -240,7 +240,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 995,
     "stock": 11,
-    "description": "A versatile hybrid bike with a perfect blend of speed and comfort."
+    "description": "Versatile hybrid bike with a perfect blend of speed and comfort."
   },
   {
     "_id": "28",
@@ -249,7 +249,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1180,
     "stock": 8,
-    "description": "A sturdy mountain bike designed to handle tough terrains."
+    "description": "Sturdy mountain bike designed for tough terrains."
   },
   {
     "_id": "29",
@@ -258,7 +258,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1440,
     "stock": 9,
-    "description": "A state-of-the-art road bike built for speed and agility."
+    "description": "State-of-the-art road bike built for speed and agility."
   },
   {
     "_id": "30",
@@ -267,7 +267,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 1020,
     "stock": 10,
-    "description": "A reliable hybrid bike ideal for daily commuting and weekend rides."
+    "description": "Reliable hybrid bike ideal for daily commuting."
   },
   {
     "_id": "31",
@@ -276,7 +276,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1190,
     "stock": 7,
-    "description": "A powerful mountain bike with advanced features for extreme trails."
+    "description": "Powerful mountain bike with advanced features for extreme trails."
   },
   {
     "_id": "32",
@@ -285,7 +285,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1460,
     "stock": 8,
-    "description": "An innovative road bike with cutting-edge technology for top performance."
+    "description": "Innovative road bike with cutting-edge technology."
   },
   {
     "_id": "33",
@@ -294,7 +294,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 1030,
     "stock": 9,
-    "description": "A versatile hybrid bike combining durability with efficiency."
+    "description": "Versatile hybrid bike combining durability with efficiency."
   },
   {
     "_id": "34",
@@ -303,7 +303,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1200,
     "stock": 10,
-    "description": "A top-of-the-line mountain bike designed for challenging off-road adventures."
+    "description": "Top-of-the-line mountain bike for challenging off-road adventures."
   },
   {
     "_id": "35",
@@ -312,7 +312,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1480,
     "stock": 6,
-    "description": "A high-end road bike built for speed and performance on the track."
+    "description": "High-end road bike built for speed and performance."
   },
   {
     "_id": "36",
@@ -321,7 +321,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 1040,
     "stock": 11,
-    "description": "A practical hybrid bike that excels in both urban and light off-road conditions."
+    "description": "Practical hybrid bike that excels in both urban and off-road conditions."
   },
   {
     "_id": "37",
@@ -330,7 +330,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1210,
     "stock": 9,
-    "description": "A robust mountain bike with enhanced suspension for rough terrain."
+    "description": "Robust mountain bike with enhanced suspension."
   },
   {
     "_id": "38",
@@ -339,7 +339,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_773382-MLU76716340619_052024-F.webp"],
     "price": 1500,
     "stock": 8,
-    "description": "A sleek and modern road bike designed for long-distance riding."
+    "description": "Sleek and modern road bike designed for long-distance riding."
   },
   {
     "_id": "39",
@@ -348,7 +348,7 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_736676-MLA79479345588_102024-F.webp"],
     "price": 1050,
     "stock": 10,
-    "description": "A versatile hybrid bike with a focus on comfort and performance."
+    "description": "Versatile hybrid bike focused on comfort and performance."
   },
   {
     "_id": "40",
@@ -357,6 +357,6 @@
     "thumbnails": ["https://http2.mlstatic.com/D_NQ_NP_2X_711178-MLU77348285459_062024-F.webp"],
     "price": 1220,
     "stock": 7,
-    "description": "A high-quality mountain bike built for endurance and stability."
+    "description": "High-quality mountain bike built for endurance and stability."
   }
 ]

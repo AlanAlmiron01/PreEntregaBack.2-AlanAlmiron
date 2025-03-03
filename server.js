@@ -1,17 +1,19 @@
+// server.js
 import app from './app.js';
-import { createServer } from 'http';
-import { Server as SocketIOServer } from 'socket.io';
+import http from 'http';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-const httpServer = createServer(app);
-const io = new SocketIOServer(httpServer);
+dotenv.config();
 
-io.on('connection', (socket) => {
-  console.log('New client connected:', socket.id);
-  // Puedes enviar datos iniciales o manejar eventos aquí
-});
+const server = http.createServer(app);
 
-// Guarda la instancia de Socket.IO en la app para emitir eventos en tiempo real
-app.set('socketio', io);
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+  .then(() => console.log('🚀 Connected to MongoDB'))
+  .catch(err => console.error('❌ MongoDB connection error:', err));
 
 const PORT = process.env.PORT || 3000;
-httpServer.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+server.listen(PORT, () => console.log(`✅ Server running at http://localhost:${PORT}`));

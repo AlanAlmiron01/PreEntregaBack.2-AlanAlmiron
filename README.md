@@ -1,39 +1,36 @@
-# Backend para e-commerce de Bicicletas Trek 🚴‍♂️
+🚴 Trek Bikes E-commerce
+Este es un e-commerce simple para vender bicicletas Trek. Permite a los usuarios registrarse, iniciar sesión, agregar productos al carrito y realizar una orden.
 
-Este proyecto es un backend sencillo para gestionar un e-commerce de bicicletas Trek. Aquí puedes crear, leer, actualizar y eliminar productos de forma eficiente. 
+🧩 Funcionalidades principales
+Registro e inicio de sesión con JWT (guardado en cookies).
 
-## ¿Qué incluye? 
-- **Gestión de productos**: Puedes agregar, ver, actualizar y eliminar productos.
-- **Persistencia de datos**: Toda la información de los productos se guarda en un archivo (`products.json`).
-- **Validación y manejo de errores**: Evita problemas con rutas no válidas o datos incompletos.
-- **Registro de solicitudes**: Usa `morgan` para mantener un registro de las peticiones al servidor.
-- **Diseño simple y claro**: Ideal para empezar con proyectos backend.
+Listado de productos con imagen, precio y botón para agregar al carrito.
 
-# Bicis Trek - E-Commerce 🚴‍♂️
+Carrito por usuario con contador, subtotal y total.
 
-¡Hola! 😊 Bienvenido al proyecto de **Bicis Trek**, mi e-commerce para vender bicicletas Trek. Este es un trabajo sencillo que incluye tanto un backend como un frontend básico para listar y mostrar productos.
+Posibilidad de eliminar productos del carrito.
 
----
+Checkout con formulario de envío (dirección y teléfono).
 
-## ¿Qué incluye este proyecto? 🛠️
+Creación de órdenes en base al carrito y vaciado automático del carrito tras completar la compra.
 
-### Frontend:
-- Una página web con el título **"Bicis Trek"**.  
-- Dos botones principales:
-  - **Inicio** (te lleva a la página principal).  
-  - **Carrito** (funciona como enlace al carrito).  
-- Un catálogo con **tres bicicletas** bien organizadas. Cada bici muestra:  
-  - Su imagen.
-  - Nombre.
-  - Precio.
-  - Stock disponible.  
+⚙️ Tecnologías usadas
+Node.js + Express
 
-### Backend:
-- Una **API REST** que maneja los productos. Puedes:
-  - Crear nuevos productos.
-  - Leer los productos existentes.
-  - Actualizar productos.
-  - Eliminar productos.
-- Los datos se guardan en un archivo JSON llamado `products.json`.
-- Manejo de rutas inexistentes para evitar errores confusos.
+MongoDB + Mongoose
+
+Passport + JWT
+
+EJS + JavaScript + Vite (frontend básico)
+
+Firebase (solo para confirmar checkout)
+
+🧪 ¿Cómo probarlo?
+Cloná el proyecto y corré npm install.
+
+Configurá .env con tu Mongo URI, JWT secret, etc.
+
+Ejecutá npm run dev.
+
+Registrate, logueate, agregá productos y completá una orden desde el checkout.
 

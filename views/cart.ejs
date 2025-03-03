@@ -1,73 +1,120 @@
+<!-- views/cart.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Your Cart</title>
   <link rel="stylesheet" href="/style.css">
+  <style>
+    .cart-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .cart-item img {
+      width: 80px;
+      height: auto;
+    }
+    .cart-item-details {
+      flex-grow: 1;
+      margin-left: 1rem;
+    }
+    .cart-item-actions {
+      margin-left: 1rem;
+    }
+    .total {
+      text-align: right;
+      font-size: 1.2em;
+      margin-top: 1rem;
+    }
+    .checkout-button {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.6rem 1.2rem;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      text-decoration: none;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Your Cart</h1>
     <nav>
-      <a href="/">Home</a>
-      <a href="/products/real">Products</a>
+      <a href="/products">Products</a>
+      <a href="/profile">Profile</a>
+      <form action="/api/auth/signout" method="POST" style="display:inline;">
+        <button type="submit">Sign Out</button>
+      </form>
     </nav>
   </header>
   <main>
-    <div id="cartItems">
-      <!-- Los elementos del carrito se cargarán aquí -->
+    <div class="cart-container">
+      <% if (!cart || cart.products.length === 0) { %>
+        <p>Your cart is empty.</p>
+      <% } else { %>
+        <% cart.products.forEach(item => { %>
+          <div class="cart-item">
+            <div class="cart-item-image">
+              <img src="<%= item.product_id.thumbnails[0] %>" alt="<%= item.product_id.title %>">
+            </div>
+            <div class="cart-item-details">
+              <h3><%= item.product_id.title %></h3>
+              <p>Price: $<%= item.product_id.price %></p>
+              <p>Quantity: <%= item.quantity %></p>
+              <p>Subtotal: $<%= item.product_id.price * item.quantity %></p>
+            </div>
+            <div class="cart-item-actions">
+              <!-- Ahora no ponemos action ni method, solo data-attributes -->
+              <button class="remove-btn" data-product-id="<%= item.product_id._id %>">
+                Remove
+              </button>
+            </div>
+          </div>
+        <% }) %>
+        <div class="total">
+          <strong>Total: $<%= cart.products.reduce((sum, item) => sum + (item.product_id.price * item.quantity), 0) %></strong>
+        </div>
+        <a class="checkout-button" href="/checkout">Proceed to Checkout</a>
+      <% } %>
     </div>
   </main>
+
   <script>
-    async function loadCart() {
-      const cartId = localStorage.getItem('cartId');
-      const cartItemsDiv = document.getElementById('cartItems');
-      if (!cartId) {
-        cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
-        return;
-      }
-      const res = await fetch(`/api/carts/${cartId}`);
-      const data = await res.json();
-      if (data.response && data.response.products.length > 0) {
-        cartItemsDiv.innerHTML = data.response.products.map(item => `
-          <div class="product-card">
-            <p>Product ID: ${item.productId}</p>
-            <p>Quantity: ${item.quantity}</p>
-            <button onclick="updateQuantity('${cartId}', '${item.productId}', ${item.quantity + 1})">+</button>
-            <button onclick="updateQuantity('${cartId}', '${item.productId}', ${item.quantity - 1})">-</button>
-            <button onclick="removeProduct('${cartId}', '${item.productId}')">Remove</button>
-          </div>
-        `).join('');
-      } else {
-        cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
-      }
-    }
-    
-    async function updateQuantity(cartId, productId, quantity) {
-      const res = await fetch(`/api/carts/${cartId}/product/${productId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ quantity })
+    // Capturamos todos los botones de Remove
+    document.querySelectorAll('.remove-btn').forEach(btn => {
+      btn.addEventListener('click', async () => {
+        const productId = btn.dataset.productId;
+        const userId    = '<%= cart.user_id %>';
+        try {
+          const res = await fetch(`/api/carts/${userId}/remove/${productId}`, {
+            method: 'POST',
+            credentials: 'include'
+          });
+          if (res.ok) {
+            alert('Producto eliminado de tu carrito');
+            window.location.reload();
+          } else {
+            const { message } = await res.json();
+            alert('Error: ' + message);
+          }
+        } catch (err) {
+          console.error(err);
+          alert('No se pudo eliminar el producto.');
+        }
       });
-      if (!res.ok) {
-        const err = await res.json();
-        alert('Error: ' + err.error);
-      }
-      loadCart();
-    }
-    
-    async function removeProduct(cartId, productId) {
-      const res = await fetch(`/api/carts/${cartId}/product/${productId}`, {
-        method: 'DELETE'
-      });
-      if (!res.ok) {
-        const err = await res.json();
-        alert('Error: ' + err.error);
-      }
-      loadCart();
-    }
-    
-    loadCart();
+    });
   </script>
 </body>
 </html>

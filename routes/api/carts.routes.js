@@ -1,73 +1,73 @@
+// routes/api/carts.routes.js
 import { Router } from 'express';
-import CartManager from '../../services/cartManager.js';
+import passport from 'passport';
+import Cart from '../../models/cart.model.js';
+import Product from '../../models/product.model.js';
 
 const router = Router();
-const cartManager = new CartManager();
 
-router.post('/', async (req, res, next) => {
+// Opción 2: Obtener el carrito del usuario mediante query parameter.
+// Esta ruta responde a GET /api/carts?user_id=...
+router.get('/', passport.authenticate('current', { session: false }), async (req, res, next) => {
   try {
-    const cartData = req.body && req.body.products && req.body.user_id ? req.body : { products: [], user_id: 'guest' };
-    const newCart = await cartManager.create(cartData);
-    res.status(201).json({ statusCode: 201, response: newCart });
-  } catch (error) {
-    next(error);
+    const uid = req.query.user_id;
+    if (!uid) return res.status(400).json({ message: 'Missing user_id query parameter' });
+    const cart = await Cart.findOne({ user_id: uid }).populate('products.product_id');
+    if (!cart) return res.status(404).json({ message: 'Cart not found' });
+    res.json(cart);
+  } catch (err) {
+    next(err);
   }
 });
 
-router.get('/', async (req, res, next) => {
+// Mantener la ruta con parámetro también (GET /api/carts/:uid)
+router.get('/:uid', passport.authenticate('current', { session: false }), async (req, res, next) => {
   try {
-    const carts = await cartManager.read();
-    res.json({ statusCode: 200, response: carts });
-  } catch (error) {
-    next(error);
+    const cart = await Cart.findOne({ user_id: req.params.uid })
+      .populate('products.product_id');
+    if (!cart) return res.status(404).json({ message: 'Cart not found' });
+    res.json(cart);
+  } catch (err) {
+    next(err);
   }
 });
 
-router.get('/:cid', async (req, res, next) => {
+// Agregar producto al carrito
+router.post('/:uid/add', passport.authenticate('current', { session: false }), async (req, res, next) => {
   try {
-    const cart = await cartManager.readOne(req.params.cid);
-    if (!cart) return res.status(404).json({ statusCode: 404, error: 'Cart not found' });
-    res.json({ statusCode: 200, response: cart });
-  } catch (error) {
-    next(error);
+    const { product_id, quantity } = req.body;
+    const qty = Number(quantity);
+    const product = await Product.findById(product_id);
+    if (!product || product.stock < qty) {
+      return res.status(400).json({ message: 'Insufficient stock or product not found' });
+    }
+    let cart = await Cart.findOne({ user_id: req.params.uid });
+    if (!cart) {
+      cart = new Cart({ user_id: req.params.uid, products: [] });
+    }
+    const index = cart.products.findIndex(item => item.product_id.toString() === product_id);
+    if (index > -1) {
+      cart.products[index].quantity += qty;
+    } else {
+      cart.products.push({ product_id, quantity: qty });
+    }
+    await cart.save();
+    res.json(cart);
+  } catch (err) {
+    next(err);
   }
 });
 
-router.post('/:cid/product/:pid', async (req, res, next) => {
+// Eliminar producto del carrito
+router.post('/:uid/remove/:productId', passport.authenticate('current', { session: false }), async (req, res, next) => {
   try {
-    const { quantity } = req.body;
-    const updatedCart = await cartManager.addProductToCart(req.params.cid, req.params.pid, quantity);
-    res.json({ statusCode: 200, response: updatedCart });
-  } catch (error) {
-    next(error);
-  }
-});
-
-router.put('/:cid/product/:pid', async (req, res, next) => {
-  try {
-    const { quantity } = req.body;
-    const updatedCart = await cartManager.updateProductQuantity(req.params.cid, req.params.pid, quantity);
-    res.json({ statusCode: 200, response: updatedCart });
-  } catch (error) {
-    next(error);
-  }
-});
-
-router.delete('/:cid/product/:pid', async (req, res, next) => {
-  try {
-    const updatedCart = await cartManager.removeProductFromCart(req.params.cid, req.params.pid);
-    res.json({ statusCode: 200, response: updatedCart });
-  } catch (error) {
-    next(error);
-  }
-});
-
-router.delete('/:cid', async (req, res, next) => {
-  try {
-    const deletedCart = await cartManager.destroy(req.params.cid);
-    res.json({ statusCode: 200, response: deletedCart });
-  } catch (error) {
-    next(error);
+    let cart = await Cart.findOne({ user_id: req.params.uid });
+    if (!cart) return res.status(404).json({ message: 'Cart not found' });
+    cart.products = cart.products.filter(item => item.product_id.toString() !== req.params.productId);
+    await cart.save();
+    res.json(cart);
+  } catch (err) {
+    next(err);
   }
 });
 

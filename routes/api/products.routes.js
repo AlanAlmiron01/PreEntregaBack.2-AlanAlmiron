@@ -1,57 +1,63 @@
+// routes/api/products.routes.js
 import { Router } from 'express';
-import ProductManager from '../../services/productManager.js';
-import validateProduct from '../../middlewares/validateProduct.js';
+import Product from '../../models/product.model.js';
 
 const router = Router();
-const productManager = new ProductManager();
 
-router.post('/', validateProduct, async (req, res, next) => {
+// Crear producto (esto se puede proteger con un middleware si solo admins pueden hacerlo)
+router.post('/', async (req, res, next) => {
   try {
-    const newProduct = await productManager.create(req.body);
-    // Emitir evento en tiempo real para actualizar la lista de productos
-    const io = req.app.get('socketio');
-    io.emit('newProduct', newProduct);
-    res.status(201).json({ statusCode: 201, response: newProduct });
-  } catch (error) {
-    next(error);
+    const newProduct = await Product.create(req.body);
+    res.status(201).json({ product: newProduct });
+  } catch (err) {
+    next(err);
   }
 });
 
+// Obtener productos (con filtro y paginación)
 router.get('/', async (req, res, next) => {
   try {
-    const products = await productManager.read();
-    res.json({ statusCode: 200, response: products });
-  } catch (error) {
-    next(error);
+    const { page = 1, limit = 40, category } = req.query;
+    const filter = category ? { category } : {};
+    const products = await Product.find(filter)
+      .skip((page - 1) * limit)
+      .limit(Number(limit));
+    res.json({ products });
+  } catch (err) {
+    next(err);
   }
 });
 
-router.get('/:pid', async (req, res, next) => {
+// Obtener producto por id
+router.get('/:id', async (req, res, next) => {
   try {
-    const product = await productManager.readOne(req.params.pid);
-    if (!product) return res.status(404).json({ statusCode: 404, error: 'Product not found' });
-    res.json({ statusCode: 200, response: product });
-  } catch (error) {
-    next(error);
+    const product = await Product.findById(req.params.id);
+    if (!product) return res.status(404).json({ message: 'Product not found' });
+    res.json({ product });
+  } catch (err) {
+    next(err);
   }
 });
 
-router.put('/:pid', validateProduct, async (req, res, next) => {
+// Actualizar producto
+router.put('/:id', async (req, res, next) => {
   try {
-    const updatedProduct = await productManager.update(req.params.pid, req.body);
-    if (!updatedProduct) return res.status(404).json({ statusCode: 404, error: 'Product not found' });
-    res.json({ statusCode: 200, response: updatedProduct });
-  } catch (error) {
-    next(error);
+    const updatedProduct = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!updatedProduct) return res.status(404).json({ message: 'Product not found' });
+    res.json({ product: updatedProduct });
+  } catch (err) {
+    next(err);
   }
 });
 
-router.delete('/:pid', async (req, res, next) => {
+// Eliminar producto
+router.delete('/:id', async (req, res, next) => {
   try {
-    await productManager.destroy(req.params.pid);
-    res.json({ statusCode: 200, response: req.params.pid });
-  } catch (error) {
-    next(error);
+    const deletedProduct = await Product.findByIdAndDelete(req.params.id);
+    if (!deletedProduct) return res.status(404).json({ message: 'Product not found' });
+    res.json({ product: deletedProduct });
+  } catch (err) {
+    next(err);
   }
 });
 

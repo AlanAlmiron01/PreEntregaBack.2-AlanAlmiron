@@ -1,0 +1,27 @@
+<!-- views/profile.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Your Profile</h1>
+    <nav>
+      <a href="/products">Products</a>
+      <a href="/cart">Cart</a>
+      <!-- Formulario que envía POST a la ruta de signout -->
+      <form action="/api/auth/signout" method="POST" style="display: inline;">
+        <button type="submit">Sign Out</button>
+      </form>
+    </nav>
+  </header>
+  <main>
+    <p>Email: <%= user.email %></p>
+    <img src="<%= user.photo %>" alt="User Photo" width="100">
+    <p>Role: <%= user.role %></p>
+  </main>
+</body>
+</html>
